@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG" />
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG" />
+  <meta property="og:url" content="URL OF THE WEBSITE" />
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>ScenePainter: Semantically Consistent Perpetual 3D Scene Generation with Concept Relation Alignment</title>
+  <link rel="icon" type="image/x-icon" href="">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title"> SimRecon: SimReady Compositional Scene Reconstruction from Real Videos</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://xiac20.github.io/">Chong Xia</a><sup>1,2</sup><sup>*</sup><sup>*</sup>,
+                Kai Zhu<sup>1</sup><sup>*</sup>,
+                Zizhuo Wang<sup>1</sup>,
+                <a href="https://liuff19.github.io/">Fangfu Liu</a><sup>1</sup>,
+                <a href="https://scholar.google.com/citations?user=X7M0I8kAAAAJ&hl=en">Zhizheng Zhang</a><sup>2,3</sup>,
+                <a href="https://duanyueqi.github.io/">Yueqi Duan</a><sup>1</sup><sup>†</sup>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <sup>1</sup>Tsinghua University &nbsp;
+                <sup>2</sup>Galbot &nbsp;
+                <sup>3</sup>BAAI
+              </span>
+              <br>
+              <strong>CVPR 2026 <span style="color: red;">🔥</span></strong>
+              <br>
+              <span class="eql-cntrb"><small><sup>*</sup>Indicates Equal Contribution</small></span>
+              <span class="eql-cntrb"><small><sup>†</sup>Indicates Corresponding Author</small></span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- Arxiv PDF link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2507.19058" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+
+                <!-- Supplementary PDF link -->
+                <!-- <span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span> -->
+
+                <!-- Github link -->
+                <span class="link-block">
+                  <a href="https://github.com/xiac20/SimRecon" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2507.19058" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Teaser video-->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <!-- <video poster="" id="tree" autoplay controls muted loop height="100%">
+        <source src="static/videos/banner_video.mp4"
+        type="video/mp4">
+      </video> -->
+        <img src="static/images/teaser.png" alt="Teaser" />
+        <h2 class="subtitle has-text-justified">
+          <strong>SimRecon:</strong> In this paper, we propose a novel compositional scene reconstruction framework, coined SimRecon, that implements a "Perception-Generation-Simulation" pipeline with specialized bridging modules to ensure high visual fidelity and physical plausibility.
+        </h2>
+      </div>
+    </div>
+  </section>
+  <!-- End teaser video -->
+<!-- 
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <video poster="" id="demo-video" autoplay controls muted loop height="100%">
+          <source src="static/videos/demo.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- Paper abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Compositional scene reconstruction seeks to create object-centric representations rather than holistic scenes from
+  real-world videos, which is natively applicable for simulation and interaction. Conventional compositional reconstruction approaches primarily emphasize on visual
+          appearance and show limited generalization ability to
+        real-world scenarios. In this paper, we propose <strong>SimRecon</strong>, a framework that realizes a “Perception-Generation-Simulation” pipeline towards cluttered scene reconstruction, which first conducts scene-level semantic reconstruction from video input, then performs single-object generation, and finally assembles these assets in the simulator
+        However, naively combining these three stages leads to visual infidelity of generated assets and physical implausibility of the final scene, a problem particularly severe for complex scenes. Thus, we further propose two bridging modules
+        between the three stages to address this problem. To be specific, for the transition from Perception to Generation, critical for visual fidelity, we introduce <strong>Active Viewpoint Optimization</strong>, which actively searches in 3D space to acquire
+optimal projected images as conditions for single-object
+completion. Moreover, for the transition from Generation to
+Simulation, essential for physical plausibility, we propose
+a <strong>Scene Graph Synthesizer</strong>, which guides the construction
+from scratch in 3D simulators, mirroring the native, constructive principle of the real world. Extensive experiments
+on the ScanNet dataset validate our method’s superior performance over previous state-of-the-art approaches.
+
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End paper abstract -->
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Concurrent Work. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Method Overview</h2>
+          <div class="content has-text-justified">
+            <img src="./static/images/pipeline.png">
+
+            <p> 
+              <strong>The overall framework of our approach SimRecon.</strong> We propose a “Perception-Generation-Simulation” pipeline with object-centric scene representations towards compositional 3D scene reconstruction from cluttered video input. In this figure, we provide illustrative visualizations using the backpack as the example to introduce our two core modules: Active Viewpoint Optimization (AVO) and Scene
+Graph Synthesizer (SGS). There, we visualize a semantic-level graph for clarity, while our framework operates at the instance-level.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Concurrent Work. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">More Results</h2>
+          <div class="content has-text-justified">
+            <img src="./static/images/supp_vis.png">
+
+            <!-- <p>
+              <strong>More Results of ScenePainter.</strong>
+            </p> -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video carousel -->
+  <!--
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-3">Video Demos from TriMap Video Diffusion</h2>
+        <!-- <div style="display: flex">
+          <div
+            style="display: inline-block; width: 50%; padding-top: 20px; margin-bottom: -20px; text-align: center; font-size: 1.2em;">
+            <strong><span style="color: red;">Left</span>: Original Video</strong>
+          </div>
+          <div
+            style="display: inline-block; width: 50%; padding-top: 20px; margin-bottom: -20px; text-align: center; font-size: 1.2em;">
+            <strong><span style="color: green;">Right</span>: With Test-Time Scaling</strong>
+          </div>
+        </div> 
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item">
+            <div class="item-video">
+              <video poster="" id="video1" autoplay controls muted loop class="video-left">
+                <source src="static/videos/rgb/01.mp4" type="video/mp4">
+              </video>
+
+              <video poster="" id="video2" autoplay controls muted loop class="video-right">
+                <source src="static/videos/rgb/02.mp4" type="video/mp4">
+              </video>
+            </div>
+            <h2 class="subtitle has-text-centered">
+              RGB Video
+            </h2>
+          </div>
+
+          <div class="item">
+            <div class="item-video">
+              <video poster="" id="video3" autoplay controls muted loop class="video-left">
+                <source src="static/videos/rgb/03.mp4" type="video/mp4">
+              </video>
+
+              <video poster="" id="video4" autoplay controls muted loop class="video-right">
+                <source src="static/videos/rgb/04.mp4" type="video/mp4">
+              </video>
+            </div>
+            <h2 class="subtitle has-text-centered">
+              RGB Video
+            </h2>
+          </div>
+
+          <div class="item">
+            <div class="item-video">
+              <video poster="" id="video5" autoplay controls muted loop class="video-left">
+                <source src="static/videos/seg/01.mp4" type="video/mp4">
+              </video>
+
+              <video poster="" id="video6" autoplay controls muted loop class="video-right">
+                <source src="static/videos/seg/02.mp4" type="video/mp4">
+              </video>
+            </div>
+            <h2 class="subtitle has-text-centered">
+              Segmentation Video
+            </h2>
+          </div>
+
+          <div class="item">
+            <div class="item-video">
+              <video poster="" id="video7" autoplay controls muted loop class="video-left">
+                <source src="static/videos/seg/03.mp4" type="video/mp4">
+              </video>
+              <video poster="" id="video8" autoplay controls muted loop class="video-right">
+                <source src="static/videos/seg/04.mp4" type="video/mp4">
+              </video>
+            </div>
+            <h2 class="subtitle has-text-centered">
+              Segmentation Video
+            </h2>
+          </div>
+
+          <div class="item">
+            <div class="item-video">
+              <video poster="" id="video9" autoplay controls muted loop class="video-left">
+                <source src="static/videos/normal/01.mp4" type="video/mp4">
+              </video>
+              <video poster="" id="video10" autoplay controls muted loop class="video-right">
+                <source src="static/videos/normal/02.mp4" type="video/mp4">
+              </video>
+            </div>
+            <h2 class="subtitle has-text-centered">
+              Normal Video
+            </h2>
+          </div>
+
+          <div class="item">
+            <div class="item-video">
+              <video poster="" id="video11" autoplay controls muted loop class="video-left">
+                <source src="static/videos/normal/03.mp4" type="video/mp4">
+              </video>
+              <video poster="" id="video12" autoplay controls muted loop class="video-right">
+                <source src="static/videos/normal/04.mp4" type="video/mp4">
+              </video>
+            </div>
+            <h2 class="subtitle has-text-centered">
+              Normal Video
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-3">More Results from TriMap Video Diffusion</h2>
+        <div class="item">
+          <div class="item-video">
+            <video poster="" id="para-video1" autoplay controls muted loop class="single-video">
+              <source src="static/videos/parallel/para1.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="item-video">
+            <video poster="" id="para-video2" autoplay controls muted loop class="single-video">
+              <source src="static/videos/parallel/para2.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="item"></div>
+        <div class="item-video">
+          <video poster="" id="para-video3" autoplay controls muted loop class="single-video">
+            <source src="static/videos/parallel/para3.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+    </div>
+    </div>
+  </section>
+
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-3">Activation Demos</h2>
+        <h3 class="subtitle">Click the buttons to switch between queries.</h3><br>
+        <!-- <div style="display: flex">
+          <div
+            style="display: inline-block; width: 50%; padding-top: 20px; margin-bottom: -20px; text-align: center; font-size: 1.2em;">
+            <strong><span style="color: red;">Left</span>: Original Video</strong>
+          </div>
+          <div
+            style="display: inline-block; width: 50%; padding-top: 20px; margin-bottom: -20px; text-align: center; font-size: 1.2em;">
+            <strong><span style="color: green;">Right</span>: With Test-Time Scaling</strong>
+          </div>
+        </div> 
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item">
+            <div class="item-video">
+              <video poster="" id="activation-video-1" autoplay controls muted loop class="single-video">
+                <!-- <video poster="" id="video3" autoplay controls muted loop class="video-left"> 
+                <source src="static/videos/loop/fridge.mp4" type="video/mp4">
+              </video>
+
+              <div class="video-buttons">
+                <button class="button is-light video-switch-btn" data-video="static/videos/loop/fridge.mp4"
+                  data-target="activation-video-1">
+                  fridge
+                </button>
+                <button class="button is-light video-switch-btn" data-video="static/videos/loop/sink.mp4"
+                  data-target="activation-video-1">
+                  kitchen sink
+                </button>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="item-video">
+              <video poster="" id="activation-video-2" autoplay controls muted loop class="single-video">
+                <source src="static/videos/loop/bear.mp4" type="video/mp4">
+              </video>
+              <div class="video-buttons">
+                <button class="button is-light video-switch-btn" data-video="static/videos/loop/bear.mp4"
+                  data-target="activation-video-2">
+                  brown bear
+                </button>
+                <button class="button is-light video-switch-btn" data-video="static/videos/loop/sheep.mp4"
+                  data-target="activation-video-2">
+                  white sheep
+                </button>
+                <button class="button is-light video-switch-btn" data-video="static/videos/loop/plate.mp4"
+                  data-target="activation-video-2">
+                  a plate of cookie
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="item-video">
+              <video poster="" id="activation-video-3" autoplay controls muted loop class="single-video">
+                <source src="static/videos/loop/glass.mp4" type="video/mp4">
+              </video>
+              <div class="video-buttons">
+                <button class="button is-light video-switch-btn" data-video="static/videos/loop/glass.mp4"
+                  data-target="activation-video-3">
+                  glass
+                </button>
+                <button class="button is-light video-switch-btn" data-video="static/videos/loop/charsiu.mp4"
+                  data-target="activation-video-3">
+                  char siu
+                </button>
+                <button class="button is-light video-switch-btn" data-video="static/videos/loop/chopsticks.mp4"
+                  data-target="activation-video-3">
+                  chopsticks
+                </button>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </section>
+  -->
+
+  <!-- End video carousel -->
+
+
+
+
+
+
+  <!-- Paper poster -->
+  <!-- <section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">Poster</h2>
+
+      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
+          </iframe>
+        
+      </div>
+    </div>
+  </section> -->
+  <!--End paper poster -->
+
+
+  <!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{xia2025scenepainter,
+  title={ScenePainter: Semantically Consistent Perpetual 3D Scene Generation with Concept Relation Alignment},
+  author={Xia, Chong and Zhang, Shengjun and Liu, Fangfu and Liu, Chang and Hirunyaratsameewong, Khodchaphun and Duan, Yueqi},
+  journal={arXiv preprint arXiv:2507.19058},
+  year={2025}
+}
+      </code></pre>
+    </div>
+  </section>
+  <!--End BibTex citation -->
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                target="_blank">Academic Project Page Template</a> which was adopted from the <a
+                href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              You are free to borrow the source code of this website, we just ask that you link back to this page in the
+              footer. This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Statcounter tracking code -->
+
+  <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+  <!-- End of Statcounter Code -->
+
+</body>
+
+</html>
